@@ -1,69 +1,36 @@
-# React + TypeScript + Vite
+# $${\color{salmon}Remnis}$$
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Overview](#overview)\
+[Built With](#built-with)\
+[Requirements](#requirements)\
+[Key Skills](#key-skills)\
+[The Process](#the-process)\
+[Continued Development](#continued-development)\
+[Screenshots](#screenshots)
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+An accessible app to enable storing and sharing memories wbetween authorised users. Memories searchable via user, tagged members, subject and keywords and linked to images connected to events. A photoalbum to help retrieve memories or to give inspiration for those struggling to contribute. Users will ultimately be able to add their perspectives or relevant experiences by linking memories together.
 
-## Expanding the ESLint configuration
+### Built With
+React 19 - Vite - Typescript
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Requirements
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+To install dependencies:
+```
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+To start the development server:
 ```
+npm run dev
+```
+
+### Key Skills
+
+#### The Process
+
+#### Continued Development
+
+#### Screenshots
