@@ -1,14 +1,13 @@
 .mainContent {
-  margin: 2em auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 90%;
+  max-width: 1200px;
   min-height: 100vh;
   background-color: #ccd7e4;
   color: #111125;
-  font-size: 20px;
-  line-height: 1.3;
   font-family: 'Nunito';
 }
 
@@ -24,7 +23,6 @@ label {
 
 h1 {
   font-size: 2.5rem;
-  margin: 0.5em 0;
+  margin: 1em 0;
 }
-
 

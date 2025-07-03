@@ -1,5 +1,5 @@
 'use client';
-import { useActionState } from 'react';
+import { useActionState, useState, useEffect } from 'react';
 import { useScrollHeight } from '../hooks/useScrollHeight';
 import styles from './memoryForm.module.css';
 
@@ -13,7 +13,7 @@ interface Memory {
 const updateDB = (_prevMem: Memory | null, formData: FormData) => {
   const memory: Memory = Object.fromEntries(formData.entries());
   console.log(memory);
-  return  memory;
+  return memory;
 };
 
 export default function MemForm() {
@@ -21,27 +21,49 @@ export default function MemForm() {
     updateDB,
     null
   );
+  const [messageClass, setMessageClass] = useState('');
   const textAreaHeight = useScrollHeight();
+
+  // Hide (fade out) the 'Memory Saved' message
+  useEffect(() => {
+    if (state && !isPending) {
+      setMessageClass('');
+      setTimeout(() => setMessageClass('hidden'), 3000);
+    }
+  }, [state, isPending]);
 
   return (
     <form action={formAction} className={styles.memForm}>
-      <label htmlFor="title">Subject: </label>
-      <input
-        type="text"
-        id="title"
-        name="title"
-        placeholder="Fi's first easter..."
-      />
-      <label htmlFor="year">When: </label>
-      <input type="text" id="year" name="year" placeholder="1975.." />
-      <label htmlFor="tagged">Who: </label>
-      <input
-        type="text"
-        id="tagged"
-        name="tagged"
-        placeholder="Kath, Gran Ren..."
-      />
-      <label htmlFor="text-area"></label>
+      <section className={styles.memFormInputs}>
+        <div className={styles.memFormInput}>
+          <label htmlFor="title">Subject: </label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            placeholder="Fi's first easter..."
+          />
+        </div>
+        <div className={styles.memFormInput}>
+          <label htmlFor="year">When: </label>
+          <input
+            type="text"
+            id="year"
+            name="year"
+            placeholder="1975.."
+          />
+        </div>
+        <div className={styles.memFormInput}>
+          <label htmlFor="tagged">Who: </label>
+          <input
+            type="text"
+            id="tagged"
+            name="tagged"
+            placeholder="Kath, Gran Ren..."
+          />
+        </div>
+        <label htmlFor="text-area"></label>
+      </section>
       <textarea
         id="text-area"
         name="text-area"
@@ -57,7 +79,10 @@ export default function MemForm() {
       >
         {isPending ? 'Saving memory' : 'Save memory'}
       </button>
-      {!!state && !isPending && <p>Memory Saved</p>}
+      <p className={`${styles.submitMsg} ${styles[messageClass]}`}>
+        {state && !isPending && 'Memory Saved'}
+      </p>
+      {/* !! = truthy boolean */}
     </form>
   );
 }
