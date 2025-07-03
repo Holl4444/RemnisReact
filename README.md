@@ -12,10 +12,10 @@
 
 An accessible app to enable storing and sharing memories wbetween authorised users. Memories searchable via user, tagged members, subject and keywords and linked to images connected to events. A photoalbum to help retrieve memories or to give inspiration for those struggling to contribute. Users will ultimately be able to add their perspectives or relevant experiences by linking memories together.
 
-## Built With
+### Built With
 React 19 - Vite - Typescript
 
-## Requirements
+### Requirements
 
 To install dependencies:
 ```
@@ -27,10 +27,10 @@ To start the development server:
 npm run dev
 ```
 
-## Key Skills
+### Key Skills
 
-### The Process
+#### The Process
 
-### Continued Development
+#### Continued Development
 
-### Screenshots
+#### Screenshots
