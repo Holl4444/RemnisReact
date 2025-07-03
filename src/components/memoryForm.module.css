@@ -1,0 +1,49 @@
+.memForm {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+label {
+  font-size: 1.2rem;
+}
+
+input,
+textarea, button {
+  padding: 0.75em;
+  border: 2px solid #828a95;
+  border-radius: 0.312em;
+  margin-bottom: 1em;
+  font-family: 'Nunito';
+  font-size: 1.05rem;
+}
+
+input:hover,
+textarea:hover,
+button:hover,
+input:focus,
+textarea:focus,
+button:focus {
+  background-color: #f7eeec;
+  border: 2px solid #f7877b;
+  outline: none;
+  color: #191944
+}
+
+input {
+  box-shadow: 1px 2px 2px #6a7c92, 1px 2px 3px #bdcada, 1px 2px 4px #d1dae6;
+}
+
+textarea {
+  height: 20vh;
+  min-height: 20vh;
+  padding: 1em;
+  box-shadow: 2px 3px 3px #6a7c92, 2px 3px 4px #bdcada, 2px 3px 5px #d1dae6;
+}
+
+button {
+    font-family: 'Cabin Sketch', Verdana, Geneva, Tahoma, sans-serif;
+    width: 100%;
+    background-color: #191944;
+    color: #fff;
+}
