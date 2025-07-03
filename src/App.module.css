@@ -1,11 +1,17 @@
-.mainContent {
+.content {
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+.main {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 90%;
-  max-width: 1200px;
   min-height: 100vh;
+  min-height: 100vh;
+  max-width: 1000px;
   background-color: #ccd7e4;
   color: #111125;
   font-family: 'Nunito';

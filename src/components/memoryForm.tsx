@@ -71,7 +71,9 @@ export default function MemForm() {
         style={{ height: textAreaHeight }}
         required
       />
-
+      <p className={`${styles.submitMsg} ${styles[messageClass]}`}>
+        {state && !isPending && 'Memory Saved'}
+      </p>
       <button
         type="submit"
         className={styles.memFormBtn}
@@ -79,10 +81,6 @@ export default function MemForm() {
       >
         {isPending ? 'Saving memory' : 'Save memory'}
       </button>
-      <p className={`${styles.submitMsg} ${styles[messageClass]}`}>
-        {state && !isPending && 'Memory Saved'}
-      </p>
-      {/* !! = truthy boolean */}
     </form>
   );
 }

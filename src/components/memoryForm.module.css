@@ -76,7 +76,8 @@ button:active {
 }
 
 .submitMsg {
-  margin: 1em auto 0 auto;
+  height: 2em;
+  margin: 0.5em auto 0 auto;
   opacity: 1;
   transition: opacity 200ms ease-in;
 }
@@ -106,8 +107,8 @@ button:active {
   }
 
   textarea {
-    min-height: 40vh;
-    margin-bottom: 3em;
+    min-height: 30vh;
+    margin-bottom: 0.5em;
     margin-top: 2em;
   }
 
