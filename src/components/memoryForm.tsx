@@ -62,7 +62,6 @@ export default function MemForm() {
             placeholder="Kath, Gran Ren..."
           />
         </div>
-        <label htmlFor="text-area"></label>
       </section>
       <textarea
         id="text-area"
