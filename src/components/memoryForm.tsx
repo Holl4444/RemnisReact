@@ -7,11 +7,19 @@ interface Memory {
   title?: string;
   year?: string;
   who?: string;
-  memoryText?: string;
+  'text-area'?: string;
 }
 
-const updateDB = (_prevMem: Memory | null, formData: FormData) => {
-  const memory: Memory = Object.fromEntries(formData.entries());
+const updateDB = (
+  _prevMem: Memory | { issue: string } | null,
+  formData: FormData
+) => {
+  const memory: Memory | { issue: string } | null =
+    Object.fromEntries(formData.entries());
+
+  if (!memory || memory['text-area']?.trim() === '') {
+    return { issue: `Add a memory to bank :)` };
+  }
   console.log(memory);
   return memory;
 };
@@ -41,6 +49,7 @@ export default function MemForm() {
             type="text"
             id="title"
             name="title"
+            maxLength={30}
             placeholder="Fi's first easter..."
           />
         </div>
@@ -50,6 +59,9 @@ export default function MemForm() {
             type="text"
             id="year"
             name="year"
+            min-length={2}
+            maxLength={20}
+            title="Any hint at when you're talking about! Decade, year, month, 'When I was about 10'"
             placeholder="1975.."
           />
         </div>
@@ -68,10 +80,11 @@ export default function MemForm() {
         name="text-area"
         placeholder="Share your memory here..."
         style={{ height: textAreaHeight }}
-        required
       />
       <p className={`${styles.submitMsg} ${styles[messageClass]}`}>
-        {state && !isPending && 'Memory Saved'}
+        {state &&
+          !isPending &&
+          ('issue' in state ? state.issue : 'Memory Saved')}
       </p>
       <button
         type="submit"

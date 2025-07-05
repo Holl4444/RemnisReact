@@ -29,8 +29,23 @@ describe('MemForm testing', () => {
     expect(textArea.value).toBe('Can type test.');
 
     await userEvent.click(subBtn);
-    
-    expect(screen.getByText('Memory Saved')).toBeTruthy();
 
+    expect(screen.getByText('Memory Saved')).toBeTruthy();
+  });
+
+  it('should provoke a pop up on invalid form data or an empty text-area', async () => {
+    render(<MemForm />);
+
+    const subBtn = screen.getByRole('button');
+
+    await userEvent.click(subBtn);
+
+    expect(
+      screen.queryByText('Please fill in this field')
+    ).toBeTruthy();
+    // expect(
+    //   screen.queryByText('Add a memory to bank :)')
+    // ).toBeTruthy();
+    expect(screen.queryByText('Memory Saved')).toBeFalsy();
   });
 });
