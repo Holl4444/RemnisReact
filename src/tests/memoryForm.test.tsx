@@ -1,6 +1,6 @@
 import MemForm from '../components/memoryForm';
 import { it, expect, describe } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 describe('MemForm testing', () => {
@@ -41,11 +41,31 @@ describe('MemForm testing', () => {
     await userEvent.click(subBtn);
 
     expect(
-      screen.queryByText('Please fill in this field')
+      screen.queryByText('Add a memory to bank :)')
     ).toBeTruthy();
-    // expect(
-    //   screen.queryByText('Add a memory to bank :)')
-    // ).toBeTruthy();
     expect(screen.queryByText('Memory Saved')).toBeFalsy();
+  });
+
+  it('should remove messages after 3 seconds', async () => {
+    render(<MemForm />);
+
+    const textArea = screen.getByPlaceholderText(
+      'Share your memory here...'
+    );
+    await userEvent.type(textArea, 'A memory added');
+
+    const subBtn = screen.getByRole('button');
+
+    await userEvent.click(subBtn);
+
+    expect(screen.queryByText('Memory Saved')).toBeTruthy();
+
+    await waitFor(
+      () => {
+        const msgEl = screen.getByText('Memory Saved');
+        expect(msgEl.className.includes('hidden')).toBe(true);
+      },
+      { timeout: 5000 }
+    );
   });
 });

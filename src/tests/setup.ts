@@ -1,6 +1,3 @@
-export function sum(a: number, b: number) {
-    if (!Number.isInteger(a) || !Number.isInteger(b)) {
-        throw new Error(`Error: whole integers only please`);
-    }
-    return a + b;
-}
+// This file is to help with tools available in testing vs vitest.config for the test runner
+
+import '@testing-library/jest-dom'

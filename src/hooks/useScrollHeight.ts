@@ -8,6 +8,7 @@ export function useScrollHeight() {
       '#text-area'
     ) as HTMLTextAreaElement;
 
+
     function handleSize() {
       setScrollHeight((textArea.scrollHeight + 2) / 20);
     }

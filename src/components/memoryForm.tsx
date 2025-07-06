@@ -59,7 +59,7 @@ export default function MemForm() {
             type="text"
             id="year"
             name="year"
-            min-length={2}
+            minLength={2}
             maxLength={20}
             title="Any hint at when you're talking about! Decade, year, month, 'When I was about 10'"
             placeholder="1975.."
@@ -72,6 +72,7 @@ export default function MemForm() {
             id="tagged"
             name="tagged"
             placeholder="Kath, Gran Ren..."
+            maxLength={30}
           />
         </div>
       </section>
