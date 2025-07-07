@@ -1,6 +1,8 @@
 'use client';
 import { useActionState, useState, useEffect } from 'react';
 import { useScrollHeight } from '../hooks/useScrollHeight';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMicrophoneLines, faMicrophoneLinesSlash } from '@fortawesome/free-solid-svg-icons';
 import styles from './memoryForm.module.css';
 
 interface Memory {
@@ -76,24 +78,41 @@ export default function MemForm() {
           />
         </div>
       </section>
+      <div className={styles.recordControls}>
+        <button className={styles.recordBtn}>
+          Record
+          <span className={styles.icon}>
+            <FontAwesomeIcon icon={faMicrophoneLines} />
+          </span>
+        </button>
+        <button className={styles.stopBtn}>
+          Stop
+          <span className={styles.icon}>
+            <FontAwesomeIcon icon={faMicrophoneLinesSlash} />
+          </span>
+        </button>
+      </div>
       <textarea
         id="text-area"
         name="text-area"
-        placeholder="Share your memory here..."
+        placeholder="Share your memory or click to edit here..."
         style={{ height: textAreaHeight }}
       />
-      <p className={`${styles.submitMsg} ${styles[messageClass]}`}>
-        {state &&
-          !isPending &&
-          ('issue' in state ? state.issue : 'Memory Saved')}
-      </p>
-      <button
-        type="submit"
-        className={styles.memFormBtn}
-        disabled={isPending}
-      >
-        {isPending ? 'Saving memory' : 'Save memory'}
-      </button>
+      <div className={styles.submitWrap}>
+        <p className={`${styles.submitMsg} ${styles[messageClass]}`}>
+          {state &&
+            !isPending &&
+            ('issue' in state ? state.issue : 'Memory Saved')}
+        </p>
+
+        <button
+          type="submit"
+          className={styles.memFormBtn}
+          disabled={isPending}
+        >
+          {isPending ? 'Saving memory' : 'Save memory'}
+        </button>
+      </div>
     </form>
   );
 }
