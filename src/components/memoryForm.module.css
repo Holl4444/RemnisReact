@@ -6,7 +6,7 @@
 
 label {
   font-size: 1.2rem;
-  margin-bottom: 0.75em
+  margin-bottom: 0.75em;
 }
 
 input,
@@ -20,7 +20,8 @@ button {
   font-size: 1.05rem;
 }
 
-textarea, button {
+textarea,
+button {
   padding: 0.75em;
 }
 
@@ -63,6 +64,7 @@ input {
 textarea {
   height: 20vh;
   min-height: 20vh;
+  max-width: 100%;
   padding: 1em;
   margin-bottom: 0;
   margin-top: 0;
@@ -123,7 +125,6 @@ button:active {
 }
 
 @media (min-width: 1024px) {
-
   .memFormInputs {
     display: flex;
     flex-direction: column;
