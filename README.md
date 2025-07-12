@@ -10,6 +10,8 @@
 
 ## Overview
 
+This project moved over to Next.js and it was simpler to create a new project than change things around here so you can find the current repo at: https://github.com/Holl4444/Remnis/blob/main/README.md
+
 An accessible app to enable storing and sharing memories between authorised users. Memories searchable via user, tagged members, subject and keywords and linked to images connected to events. A photoalbum to help retrieve memories or to give inspiration for those struggling to contribute. Users will ultimately be able to add their perspectives or relevant experiences by linking memories together. Text area auto expands as text grows.
 
 ### Built With
